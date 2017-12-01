@@ -54,14 +54,8 @@
         <input type="text" id="meet_time" name="meet_time" placeholder="Meet time" class="form-control" value="<%= @activity.meet_time %>">
       </div>
 
-      <!-- Label and input for proposer_id -->
-      <div class="form-group">
-        <label for="proposer_id" class="control-label">
-          Proposer
-        </label>
-
-        <%= select_tag(:proposer_id, options_from_collection_for_select(User.all, :id, :created_at, @activity.proposer_id), :class => "form-control") %>
-      </div>
+      
+      
 
       <!-- Label and input for visual -->
       <div class="form-group">
