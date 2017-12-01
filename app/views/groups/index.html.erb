@@ -20,8 +20,11 @@
         <td><%= group.name %></td>
         <td>
           <a href="/groups/<%= group.id %>" class="btn btn-primary">Show</a>
-          <a href="/groups/<%= group.id %>/edit" class="btn btn-warning">Edit</a>
-          <a href="/delete_group/<%= group.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
+          
+          <% if current_user == group.user %>
+            <a href="/groups/<%= group.id %>/edit" class="btn btn-warning">Edit</a>
+            <a href="/delete_group/<%= group.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
+          <% end %>
         </td>
       </tr>
       <% end %>
