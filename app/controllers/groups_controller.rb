@@ -47,8 +47,6 @@ class GroupsController < ApplicationController
 
   def update
     @group = Group.find(params[:id])
-
-    @group.creator_id = params[:creator_id]
     @group.name = params[:name]
 
     save_status = @group.save
