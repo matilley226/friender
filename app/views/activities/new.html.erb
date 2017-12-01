@@ -42,7 +42,7 @@
           Category
         </label>
 
-        <input type="text" id="category_id" name="category_id" placeholder="Category" class="form-control" value="<%= @activity.category_id %>">
+        <%= select_tag(:category_id, options_from_collection_for_select(Category.all, :id, :name, @activity.category_id), :class => "form-control") %>
       </div>
 
       <!-- Label and input for meet_time -->
