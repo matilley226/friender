@@ -16,8 +16,20 @@
 
       <% @memberships.each do |membership| %>
       <tr>
-        <td><%= membership.group.creator_id %></td>
-        <td><%= membership.member.created_at %></td>
+        <td>
+          <% if membership.group.present? %>
+            <a href="/groups/<%= membership.group.id %>">
+              <%= membership.group.creator_id %>
+            </a>
+          <% end %>
+        </td>
+        <td>
+          <% if membership.member.present? %>
+            <a href="/users/<%= membership.member.id %>">
+              <%= membership.member.created_at %>
+            </a>
+          <% end %>
+        </td>
         <td>
           <a href="/memberships/<%= membership.id %>" class="btn btn-primary">Show</a>
           <a href="/memberships/<%= membership.id %>/edit" class="btn btn-warning">Edit</a>

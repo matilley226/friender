@@ -17,8 +17,20 @@
 
       <% @invites.each do |invite| %>
       <tr>
-        <td><%= invite.activity.name %></td>
-        <td><%= invite.invitee.created_at %></td>
+        <td>
+          <% if invite.activity.present? %>
+            <a href="/activities/<%= invite.activity.id %>">
+              <%= invite.activity.name %>
+            </a>
+          <% end %>
+        </td>
+        <td>
+          <% if invite.invitee.present? %>
+            <a href="/users/<%= invite.invitee.id %>">
+              <%= invite.invitee.created_at %>
+            </a>
+          <% end %>
+        </td>
         <td><%= invite.attend_status %></td>
         <td>
           <a href="/invites/<%= invite.id %>" class="btn btn-primary">Show</a>

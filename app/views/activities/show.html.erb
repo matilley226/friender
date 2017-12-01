@@ -16,13 +16,25 @@
       </dd>
 
       <dt>Category</dt>
-      <dd><%= @activity.category_id %></dd>
+      <dd>
+        <% if @activity.category.present? %>
+          <a href="/categories/<%= @activity.category_id %>">
+            <%= @activity.category.name %>
+          </a>
+        <% end %>
+      </dd>
 
       <dt>Meet time</dt>
       <dd><%= @activity.meet_time %></dd>
 
       <dt>Proposer</dt>
-      <dd><%= @activity.proposer_id %></dd>
+      <dd>
+        <% if @activity.proposer.present? %>
+          <a href="/users/<%= @activity.proposer_id %>">
+            <%= @activity.proposer.created_at %>
+          </a>
+        <% end %>
+      </dd>
 
       <dt>Visual</dt>
       <dd><img src="<%= @activity.visual %>" class="img-responsive"></dd>

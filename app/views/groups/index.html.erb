@@ -16,7 +16,13 @@
 
       <% @groups.each do |group| %>
       <tr>
-        <td><%= group.user.created_at %></td>
+        <td>
+          <% if group.user.present? %>
+            <a href="/users/<%= group.user.id %>">
+              <%= group.user.created_at %>
+            </a>
+          <% end %>
+        </td>
         <td><%= group.name %></td>
         <td>
           <a href="/groups/<%= group.id %>" class="btn btn-primary">Show</a>

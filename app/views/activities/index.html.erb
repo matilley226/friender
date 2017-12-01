@@ -33,9 +33,21 @@
       <tr>
         <td><%= activity.name %></td>
         <td><%= activity.address %></td>
-        <td><%= activity.category.name %></td>
+        <td>
+          <% if activity.category.present? %>
+            <a href="/categories/<%= activity.category.id %>">
+              <%= activity.category.name %>
+            </a>
+          <% end %>
+        </td>
         <td><%= activity.meet_time %></td>
-        <td><%= activity.proposer.created_at %></td>
+        <td>
+          <% if activity.proposer.present? %>
+            <a href="/users/<%= activity.proposer.id %>">
+              <%= activity.proposer.created_at %>
+            </a>
+          <% end %>
+        </td>
         <td><img src='<%= activity.visual %>' class='img-responsive'></td>
         <td><%= activity.duration %></td>
         <td><%= activity.cost_level %></td>
