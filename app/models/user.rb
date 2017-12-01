@@ -19,6 +19,10 @@ class User < ApplicationRecord
 
   # Indirect associations
 
+  has_many   :activity_invites,
+             :through => :invites,
+             :source => :activity
+
   # Validations
 
   # Include default devise modules. Others available are:

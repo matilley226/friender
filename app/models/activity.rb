@@ -11,6 +11,10 @@ class Activity < ApplicationRecord
 
   # Indirect associations
 
+  has_many   :invitees,
+             :through => :invites,
+             :source => :invitee
+
   # Validations
 
 end
