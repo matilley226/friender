@@ -33,7 +33,7 @@
           Invitee
         </label>
 
-        <input type="text" id="invitee_id" name="invitee_id" placeholder="Invitee" class="form-control" value="<%= @invite.invitee_id %>">
+        <%= select_tag(:invitee_id, options_from_collection_for_select(User.all, :id, :created_at, @invite.invitee_id), :class => "form-control") %>
       </div>
 
       <!-- Label and input for attend_status -->
