@@ -16,7 +16,7 @@
 
       <% @groups.each do |group| %>
       <tr>
-        <td><%= group.creator_id %></td>
+        <td><%= group.user.created_at %></td>
         <td><%= group.name %></td>
         <td>
           <a href="/groups/<%= group.id %>" class="btn btn-primary">Show</a>
