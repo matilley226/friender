@@ -1,6 +1,10 @@
 class User < ApplicationRecord
   # Direct associations
 
+  has_many   :memberships,
+             :foreign_key => "member_id",
+             :dependent => :destroy
+
   has_many   :groups,
              :foreign_key => "creator_id",
              :dependent => :destroy
