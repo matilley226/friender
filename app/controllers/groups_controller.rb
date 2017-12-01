@@ -16,6 +16,7 @@ class GroupsController < ApplicationController
   end
 
   def show
+    @membership = Membership.new
     @group = Group.find(params[:id])
 
     render("groups/show.html.erb")

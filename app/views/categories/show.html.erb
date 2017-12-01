@@ -54,6 +54,77 @@
           </div>
         </li>
       <% end %>
+
+      <li class="list-group-item">
+        <form action="/create_activity" method="post" enctype="multipart/form-data">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for name -->
+      <div class="form-group">
+        <label for="name" class="control-label">
+          Name
+        </label>
+
+        <input type="text" id="name" name="name" placeholder="Name" class="form-control" value="">
+      </div>
+
+      <!-- Label and input for address -->
+      <div class="form-group">
+        <label for="address" class="control-label">
+          Address
+        </label>
+
+        <input type="text" id="address" name="address" placeholder="Address" class="form-control" value="">
+      </div>
+
+      <!-- Label and input for category_id -->
+      <input type="hidden" name="category_id" value="<%= @category.id %>">
+
+      <!-- Label and input for meet_time -->
+      <div class="form-group">
+        <label for="meet_time" class="control-label">
+          Meet time
+        </label>
+
+        <input type="text" id="meet_time" name="meet_time" placeholder="Meet time" class="form-control" value="">
+      </div>
+
+      <!-- Label and input for proposer_id -->
+      <input type="hidden" name="proposer_id" value="<%= current_user.id %>">
+
+      <!-- Label and input for visual -->
+      <div class="form-group">
+        <label for="visual" class="control-label">
+          Visual
+        </label>
+
+        <input type="file" id="visual" name="visual" class="form-control">
+      </div>
+
+      <!-- Label and input for duration -->
+      <div class="form-group">
+        <label for="duration" class="control-label">
+          Duration
+        </label>
+
+        <input type="text" id="duration" name="duration" placeholder="Duration" class="form-control" value="">
+      </div>
+
+      <!-- Label and input for cost_level -->
+      <div class="form-group">
+        <label for="cost_level" class="control-label">
+          Cost level
+        </label>
+
+        <input type="text" id="cost_level" name="cost_level" placeholder="Cost level" class="form-control" value="">
+      </div>
+
+      <button class="btn btn-block btn-success">
+        Create Activity
+      </button>
+    </form>
+      </li>
     </ul>
   </div>
 </div>
