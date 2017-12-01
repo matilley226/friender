@@ -1,5 +1,7 @@
 ActiveAdmin.register Activity do
 
+ permit_params :name, :address, :category_id, :meet_time, :proposer_id, :visual, :duration, :cost_level
+
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
