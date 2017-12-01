@@ -1,0 +1,55 @@
+<!-- Validation failure messages -->
+<% if @invite.errors.any? %>
+  <% @invite.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<div class="page-header">
+  <h3>Add Invite</h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <form action="/create_invite" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for activity_id -->
+      <div class="form-group">
+        <label for="activity_id" class="control-label">
+          Activity
+        </label>
+
+        <input type="text" id="activity_id" name="activity_id" placeholder="Activity" class="form-control" value="<%= @invite.activity_id %>">
+      </div>
+
+      <!-- Label and input for invitee_id -->
+      <div class="form-group">
+        <label for="invitee_id" class="control-label">
+          Invitee
+        </label>
+
+        <input type="text" id="invitee_id" name="invitee_id" placeholder="Invitee" class="form-control" value="<%= @invite.invitee_id %>">
+      </div>
+
+      <!-- Label and input for attend_status -->
+      <div class="form-group">
+        <label for="attend_status" class="control-label">
+          Attend status
+        </label>
+
+        <input type="text" id="attend_status" name="attend_status" placeholder="Attend status" class="form-control" value="<%= @invite.attend_status %>">
+      </div>
+
+      <button class="btn btn-success">
+        Create Invite
+      </button>
+      or
+      <a href="/invites">Cancel</a>
+    </form>
+  </div>
+</div>

@@ -1,4 +1,21 @@
 Rails.application.routes.draw do
+  # Routes for the Invite resource:
+  # CREATE
+  get "/invites/new", :controller => "invites", :action => "new"
+  post "/create_invite", :controller => "invites", :action => "create"
+
+  # READ
+  get "/invites", :controller => "invites", :action => "index"
+  get "/invites/:id", :controller => "invites", :action => "show"
+
+  # UPDATE
+  get "/invites/:id/edit", :controller => "invites", :action => "edit"
+  post "/update_invite/:id", :controller => "invites", :action => "update"
+
+  # DELETE
+  get "/delete_invite/:id", :controller => "invites", :action => "destroy"
+  #------------------------------
+
   devise_for :users
   # Routes for the User resource:
   # READ
