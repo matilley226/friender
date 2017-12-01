@@ -1,5 +1,7 @@
 ActiveAdmin.register Invite do
 
+ permit_params :activity_id, :invitee_id, :attend_status
+
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
