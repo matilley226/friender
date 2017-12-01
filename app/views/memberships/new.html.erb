@@ -24,7 +24,7 @@
           Group
         </label>
 
-        <input type="text" id="group_id" name="group_id" placeholder="Group" class="form-control" value="<%= @membership.group_id %>">
+        <%= select_tag(:group_id, options_from_collection_for_select(Group.all, :id, :creator_id, @membership.group_id), :class => "form-control") %>
       </div>
 
       <!-- Label and input for member_id -->
