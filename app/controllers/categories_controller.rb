@@ -1,6 +1,7 @@
 class CategoriesController < ApplicationController
   def index
-    @categories = Category.page(params[:page]).per(10)
+    @q = Category.ransack(params[:q])
+    @categories = @q.result(:distinct => true).includes(:activities).page(params[:page]).per(10)
 
     render("categories/index.html.erb")
   end

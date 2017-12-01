@@ -1,6 +1,7 @@
 class MembershipsController < ApplicationController
   def index
-    @memberships = Membership.page(params[:page]).per(10)
+    @q = Membership.ransack(params[:q])
+    @memberships = @q.result(:distinct => true).includes(:member, :group).page(params[:page]).per(10)
 
     render("memberships/index.html.erb")
   end

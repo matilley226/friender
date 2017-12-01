@@ -10,7 +10,8 @@ class ActivitiesController < ApplicationController
   end
 
   def index
-    @activities = Activity.page(params[:page]).per(10)
+    @q = Activity.ransack(params[:q])
+    @activities = @q.result(:distinct => true).includes(:invites, :category, :proposer, :invitees).page(params[:page]).per(10)
     @location_hash = Gmaps4rails.build_markers(@activities.where.not(:address_latitude => nil)) do |activity, marker|
       marker.lat activity.address_latitude
       marker.lng activity.address_longitude
