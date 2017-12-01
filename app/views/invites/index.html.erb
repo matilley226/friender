@@ -18,7 +18,7 @@
       <% @invites.each do |invite| %>
       <tr>
         <td><%= invite.activity.name %></td>
-        <td><%= invite.invitee_id %></td>
+        <td><%= invite.invitee.created_at %></td>
         <td><%= invite.attend_status %></td>
         <td>
           <a href="/invites/<%= invite.id %>" class="btn btn-primary">Show</a>
