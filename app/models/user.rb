@@ -19,6 +19,10 @@ class User < ApplicationRecord
 
   # Indirect associations
 
+  has_many   :group_memberships,
+             :through => :memberships,
+             :source => :group
+
   has_many   :activity_invites,
              :through => :invites,
              :source => :activity

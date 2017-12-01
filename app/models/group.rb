@@ -9,6 +9,10 @@ class Group < ApplicationRecord
 
   # Indirect associations
 
+  has_many   :members,
+             :through => :memberships,
+             :source => :member
+
   # Validations
 
 end
