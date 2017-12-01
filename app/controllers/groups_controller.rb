@@ -10,7 +10,7 @@ class GroupsController < ApplicationController
   end
 
   def index
-    @groups = Group.all
+    @groups = current_user.groups.page(params[:page]).per(10)
 
     render("groups/index.html.erb")
   end
