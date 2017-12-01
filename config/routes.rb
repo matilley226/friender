@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root :to => "activities#index"
   # Routes for the Membership resource:
   # CREATE
   get "/memberships/new", :controller => "memberships", :action => "new"
