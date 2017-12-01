@@ -1,0 +1,100 @@
+<!-- Validation failure messages -->
+<% if @activity.errors.any? %>
+  <% @activity.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<div class="page-header">
+  <h3>Add Activity</h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <form action="/create_activity" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for name -->
+      <div class="form-group">
+        <label for="name" class="control-label">
+          Name
+        </label>
+
+        <input type="text" id="name" name="name" placeholder="Name" class="form-control" value="<%= @activity.name %>">
+      </div>
+
+      <!-- Label and input for address -->
+      <div class="form-group">
+        <label for="address" class="control-label">
+          Address
+        </label>
+
+        <input type="text" id="address" name="address" placeholder="Address" class="form-control" value="<%= @activity.address %>">
+      </div>
+
+      <!-- Label and input for category_id -->
+      <div class="form-group">
+        <label for="category_id" class="control-label">
+          Category
+        </label>
+
+        <input type="text" id="category_id" name="category_id" placeholder="Category" class="form-control" value="<%= @activity.category_id %>">
+      </div>
+
+      <!-- Label and input for meet_time -->
+      <div class="form-group">
+        <label for="meet_time" class="control-label">
+          Meet time
+        </label>
+
+        <input type="text" id="meet_time" name="meet_time" placeholder="Meet time" class="form-control" value="<%= @activity.meet_time %>">
+      </div>
+
+      <!-- Label and input for proposer_id -->
+      <div class="form-group">
+        <label for="proposer_id" class="control-label">
+          Proposer
+        </label>
+
+        <input type="text" id="proposer_id" name="proposer_id" placeholder="Proposer" class="form-control" value="<%= @activity.proposer_id %>">
+      </div>
+
+      <!-- Label and input for visual -->
+      <div class="form-group">
+        <label for="visual" class="control-label">
+          Visual
+        </label>
+
+        <input type="text" id="visual" name="visual" placeholder="Visual" class="form-control" value="<%= @activity.visual %>">
+      </div>
+
+      <!-- Label and input for duration -->
+      <div class="form-group">
+        <label for="duration" class="control-label">
+          Duration
+        </label>
+
+        <input type="text" id="duration" name="duration" placeholder="Duration" class="form-control" value="<%= @activity.duration %>">
+      </div>
+
+      <!-- Label and input for cost_level -->
+      <div class="form-group">
+        <label for="cost_level" class="control-label">
+          Cost level
+        </label>
+
+        <input type="text" id="cost_level" name="cost_level" placeholder="Cost level" class="form-control" value="<%= @activity.cost_level %>">
+      </div>
+
+      <button class="btn btn-success">
+        Create Activity
+      </button>
+      or
+      <a href="/activities">Cancel</a>
+    </form>
+  </div>
+</div>

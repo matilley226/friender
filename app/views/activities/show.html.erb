@@ -1,0 +1,46 @@
+<div class="page-header">
+  <h3>Activity #<%= @activity.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12 mb-2">
+    <dl class="dl-horizontal">
+      <dt>Name</dt>
+      <dd><%= @activity.name %></dd>
+
+      <dt>Address</dt>
+      <dd><%= @activity.address %></dd>
+
+      <dt>Category</dt>
+      <dd><%= @activity.category_id %></dd>
+
+      <dt>Meet time</dt>
+      <dd><%= @activity.meet_time %></dd>
+
+      <dt>Proposer</dt>
+      <dd><%= @activity.proposer_id %></dd>
+
+      <dt>Visual</dt>
+      <dd><%= @activity.visual %></dd>
+
+      <dt>Duration</dt>
+      <dd><%= @activity.duration %></dd>
+
+      <dt>Cost level</dt>
+      <dd><%= @activity.cost_level %></dd>
+
+    </dl>
+
+    <div class="btn-group btn-group-justified">
+      <a href="/activities" class="btn btn-primary">
+        Back
+      </a>
+      <a href="/activities/<%= @activity.id %>/edit" class="btn btn-warning">
+        Edit
+      </a>
+      <a href="/delete_activity/<%= @activity.id %>" class="btn btn-danger" rel="nofollow">
+        Delete
+      </a>
+    </div>
+  </div>
+</div>

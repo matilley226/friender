@@ -1,0 +1,42 @@
+<div class="page-header">
+  <h1>
+    Activities
+    <a href="/activities/new" class="btn btn-lg btn-success">New Activity</a>
+  </h1>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <table class="table table-striped table-hover">
+      <tr>
+        <th>Name</th>
+        <th>Address</th>
+        <th>Category</th>
+        <th>Meet time</th>
+        <th>Proposer</th>
+        <th>Visual</th>
+        <th>Duration</th>
+        <th>Cost level</th>
+        <th>Actions</th>
+      </tr>
+
+      <% @activities.each do |activity| %>
+      <tr>
+        <td><%= activity.name %></td>
+        <td><%= activity.address %></td>
+        <td><%= activity.category_id %></td>
+        <td><%= activity.meet_time %></td>
+        <td><%= activity.proposer_id %></td>
+        <td><%= activity.visual %></td>
+        <td><%= activity.duration %></td>
+        <td><%= activity.cost_level %></td>
+        <td>
+          <a href="/activities/<%= activity.id %>" class="btn btn-primary">Show</a>
+          <a href="/activities/<%= activity.id %>/edit" class="btn btn-warning">Edit</a>
+          <a href="/delete_activity/<%= activity.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
