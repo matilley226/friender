@@ -20,3 +20,189 @@
     </div>
   </div>
 </div>
+
+<!-- A User has many activities -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        Activities
+      </li>
+
+      <% @user.activities.each do |activity| %>
+        <li class="list-group-item">
+          <a href="/activities/<%= activity.id %>">
+            <%= activity.name %>
+          </a>
+          <div class="btn-group btn-group-xs pull-right">
+            <a href="/activities/<%= activity.id %>" class="btn btn-primary">
+              <i class="fa fa-search-plus"></i>
+            </a>
+            <a href="/activities/<%= activity.id %>/edit" class="btn btn-warning">
+              <i class="fa fa-edit"></i>
+            </a>
+            <a href="/delete_activity/<%= activity.id %>" class="btn btn-danger" rel="nofollow">
+              <i class="fa fa-trash-o"></i>
+            </a>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
+<!-- A User has many invites -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        Invites
+      </li>
+
+      <% @user.invites.each do |invite| %>
+        <li class="list-group-item">
+          <a href="/invites/<%= invite.id %>">
+            <%= invite.activity_id %>
+          </a>
+          <div class="btn-group btn-group-xs pull-right">
+            <a href="/invites/<%= invite.id %>" class="btn btn-primary">
+              <i class="fa fa-search-plus"></i>
+            </a>
+            <a href="/invites/<%= invite.id %>/edit" class="btn btn-warning">
+              <i class="fa fa-edit"></i>
+            </a>
+            <a href="/delete_invite/<%= invite.id %>" class="btn btn-danger" rel="nofollow">
+              <i class="fa fa-trash-o"></i>
+            </a>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
+<!-- A User has many groups -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        Groups
+      </li>
+
+      <% @user.groups.each do |group| %>
+        <li class="list-group-item">
+          <a href="/groups/<%= group.id %>">
+            <%= group.creator_id %>
+          </a>
+          <div class="btn-group btn-group-xs pull-right">
+            <a href="/groups/<%= group.id %>" class="btn btn-primary">
+              <i class="fa fa-search-plus"></i>
+            </a>
+            <a href="/groups/<%= group.id %>/edit" class="btn btn-warning">
+              <i class="fa fa-edit"></i>
+            </a>
+            <a href="/delete_group/<%= group.id %>" class="btn btn-danger" rel="nofollow">
+              <i class="fa fa-trash-o"></i>
+            </a>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
+<!-- A User has many memberships -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        Memberships
+      </li>
+
+      <% @user.memberships.each do |membership| %>
+        <li class="list-group-item">
+          <a href="/memberships/<%= membership.id %>">
+            <%= membership.group_id %>
+          </a>
+          <div class="btn-group btn-group-xs pull-right">
+            <a href="/memberships/<%= membership.id %>" class="btn btn-primary">
+              <i class="fa fa-search-plus"></i>
+            </a>
+            <a href="/memberships/<%= membership.id %>/edit" class="btn btn-warning">
+              <i class="fa fa-edit"></i>
+            </a>
+            <a href="/delete_membership/<%= membership.id %>" class="btn btn-danger" rel="nofollow">
+              <i class="fa fa-trash-o"></i>
+            </a>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
+<!-- A User has many activity_invites -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        Activity Invites
+      </li>
+
+      <% @user.activity_invites.each do |activity| %>
+        <li class="list-group-item">
+          <a href="/activities/<%= activity.id %>">
+            <%= activity.name %>
+          </a>
+          <div class="btn-group btn-group-xs pull-right">
+            <a href="/activities/<%= activity.id %>" class="btn btn-primary">
+              <i class="fa fa-search-plus"></i>
+            </a>
+            <a href="/activities/<%= activity.id %>/edit" class="btn btn-warning">
+              <i class="fa fa-edit"></i>
+            </a>
+            <a href="/delete_activity/<%= activity.id %>" class="btn btn-danger" rel="nofollow">
+              <i class="fa fa-trash-o"></i>
+            </a>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
+<!-- A User has many group_memberships -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        Group Memberships
+      </li>
+
+      <% @user.group_memberships.each do |group| %>
+        <li class="list-group-item">
+          <a href="/groups/<%= group.id %>">
+            <%= group.creator_id %>
+          </a>
+          <div class="btn-group btn-group-xs pull-right">
+            <a href="/groups/<%= group.id %>" class="btn btn-primary">
+              <i class="fa fa-search-plus"></i>
+            </a>
+            <a href="/groups/<%= group.id %>/edit" class="btn btn-warning">
+              <i class="fa fa-edit"></i>
+            </a>
+            <a href="/delete_group/<%= group.id %>" class="btn btn-danger" rel="nofollow">
+              <i class="fa fa-trash-o"></i>
+            </a>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
