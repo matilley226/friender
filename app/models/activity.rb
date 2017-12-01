@@ -1,4 +1,6 @@
 class Activity < ApplicationRecord
+  mount_uploader :visual, VisualUploader
+
   # Direct associations
 
   belongs_to :proposer,

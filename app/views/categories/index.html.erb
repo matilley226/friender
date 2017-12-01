@@ -17,7 +17,7 @@
       <% @categories.each do |category| %>
       <tr>
         <td><%= category.name %></td>
-        <td><%= category.icon %></td>
+        <td><img src='<%= category.icon %>' class='img-responsive'></td>
         <td>
           <a href="/categories/<%= category.id %>" class="btn btn-primary">Show</a>
           <a href="/categories/<%= category.id %>/edit" class="btn btn-warning">Edit</a>

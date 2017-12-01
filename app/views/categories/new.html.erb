@@ -14,7 +14,7 @@
 
 <div class="row">
   <div class="col-md-12">
-    <form action="/create_category" method="post">
+    <form action="/create_category" method="post" enctype="multipart/form-data">
       <!-- Hidden input for authenticity token to protect from forgery -->
       <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
 
@@ -33,7 +33,7 @@
           Icon
         </label>
 
-        <input type="text" id="icon" name="icon" placeholder="Icon" class="form-control" value="<%= @category.icon %>">
+        <input type="file" id="icon" name="icon" class="form-control">
       </div>
 
       <button class="btn btn-success">
