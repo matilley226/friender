@@ -17,7 +17,7 @@
 
       <% @invites.each do |invite| %>
       <tr>
-        <td><%= invite.activity_id %></td>
+        <td><%= invite.activity.name %></td>
         <td><%= invite.invitee_id %></td>
         <td><%= invite.attend_status %></td>
         <td>
