@@ -1,6 +1,10 @@
 class User < ApplicationRecord
   # Direct associations
 
+  has_many   :activities,
+             :foreign_key => "proposer_id",
+             :dependent => :destroy
+
   # Indirect associations
 
   # Validations
