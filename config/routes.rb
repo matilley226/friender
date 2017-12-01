@@ -1,4 +1,21 @@
 Rails.application.routes.draw do
+  # Routes for the Membership resource:
+  # CREATE
+  get "/memberships/new", :controller => "memberships", :action => "new"
+  post "/create_membership", :controller => "memberships", :action => "create"
+
+  # READ
+  get "/memberships", :controller => "memberships", :action => "index"
+  get "/memberships/:id", :controller => "memberships", :action => "show"
+
+  # UPDATE
+  get "/memberships/:id/edit", :controller => "memberships", :action => "edit"
+  post "/update_membership/:id", :controller => "memberships", :action => "update"
+
+  # DELETE
+  get "/delete_membership/:id", :controller => "memberships", :action => "destroy"
+  #------------------------------
+
   # Routes for the Group resource:
   # CREATE
   get "/groups/new", :controller => "groups", :action => "new"
